@@ -1,0 +1,24 @@
+{
+  "name": "ContextFavicon",
+  "version": "0.1.0",
+  "description": "\"bar site: example.com\" If you search Google, you change the favicon in a tab http://example.com/favicon.ico .",
+  "permissions": [
+      "tabs"
+      ,"http://*/*"
+  ],
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": [
+        "http://www.google.com/search*"
+        ,"http://www.google.co.jp/search*"
+        ,"https://www.google.com/search*"
+        ,"https://www.google.co.jp/search*"
+      ],
+      "js": [
+        "contentscript.js"
+      ],
+      "all_frames": true
+    }
+  ]
+}
